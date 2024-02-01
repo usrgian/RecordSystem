@@ -1,0 +1,26 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in current_user.students %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>
+                <a href="{{ url_for('view_info', student_id=i.id) }}">View</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

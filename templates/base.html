@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    {{ moment.include_moment()}}
+</head>
+<body>
+    <style>
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 50px;
+        } 
+        ul li {
+            display: inline-block;
+            margin: 0 13px;
+        }
+    </style>
+
+    <nav>
+        <h3>
+            Student Record System
+        </h3>
+        <ul>
+            {% if current_user.is_authenticated %}
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="/student">Students</a>
+            </li>
+            <li>
+                <a href="/maintenance">Maintenance</a>
+            </li>
+            <li>
+                <a href="/add-student">New Student</a>
+            </li>
+            <li>
+                <a href="/profile/{{current_user.username}}">Profile</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+ {% block content %}
+ {% endblock  %}
+</body>
+</html>

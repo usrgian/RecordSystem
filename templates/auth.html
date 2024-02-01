@@ -1,0 +1,38 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{{ url_for('login') }}" method="POST"> 
+    <h3>Log In</h3>
+    <label for="">Username</label>
+    <input type="text" name="userName"> <br/>
+
+    <label for="">Password</label>
+    <input type="password" name="password"> <br/>
+
+    <button type="submit">Log In</button>
+</form>
+<br/>
+<br/>
+
+<form action="{{ url_for('sign_up') }}" method="POST"> 
+    <h3>Log In</h3>
+    <label for="">Username</label>
+    <input type="text" name="userName"> <br/>
+
+    <label for="">Email</label>
+    <input type="text" name="email"> <br/>
+
+    <label for="">Password</label>
+    <input type="password" name="password1"> <br/>
+
+    <label for="">Password (Confirm)</label>
+    <input type="password" name="password2"> <br/>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+
+{% endblock %}
